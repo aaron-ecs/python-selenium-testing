@@ -1,7 +1,7 @@
-Feature: Calculator
+Feature: Google Search Within Website
  	As a Google user
  	I want to have the ability to prefix my searches with a Website
- 	So I can search within a spesific domain
+ 	So I can search within a specific domain
 
   Scenario Outline: Searching within domain
         Given I want to find <term> within website <website>

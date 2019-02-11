@@ -7,4 +7,3 @@ COPY . ./
 RUN pip install --upgrade pip
 RUN pip install selenium
 RUN pip install behave
-RUN behave

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  tests:
+    image: aaronmwilliams/python-selenium-testing
+    depends_on:
+      - "zalenium"
+    command: ["./wait-for-zalenium.sh"]
+  zalenium:
+    image: dosel/zalenium
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/videos:/home/seluser/videos
+    privileged: true
+    environment:
+      - PULL_SELENIUM_IMAGE=true
+    ports:
+      - 4444:4444
+    command: ["start"]

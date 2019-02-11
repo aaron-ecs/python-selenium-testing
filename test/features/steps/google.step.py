@@ -15,7 +15,7 @@ WEBSITE = None
 def build_search(self, term, website):
     """ Build the search query from the feature scenario """
     self.DRIVER = self.driver = webdriver.Remote(
-        command_executor='http://192.168.1.149:4444//wd/hub',
+        command_executor='http://zalenium:4444/wd/hub',
         desired_capabilities={
             'browserName': 'firefox',
             'javascriptEnabled': True
@@ -33,10 +33,10 @@ def perform_search(self):
 
 @then('the results are returned')
 def check_results(self):
-    """ Check the first 4 results are to the given web domain """
+    """ Check the first 2 results are to the given web domain """
     WebDriverWait(self.DRIVER, 5).until(
         lambda driver: self.DRIVER.find_elements_by_class_name("r"))
     results = self.DRIVER.find_elements_by_class_name("r")
-    for result in results[:4]:
+    for result in results[:2]:
         assert self.WEBSITE in result.find_element_by_tag_name("a").get_attribute("href")
     self.DRIVER.quit()
