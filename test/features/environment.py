@@ -5,7 +5,7 @@ from selenium import webdriver
 @fixture
 def browser_firefox(context):
     context.driver = webdriver.Remote(
-        command_executor='http://localhost:4444/wd/hub',
+        command_executor='http://zalenium:4444/wd/hub',
         desired_capabilities={
             'browserName': 'firefox',
             'javascriptEnabled': True
