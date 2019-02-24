@@ -1,0 +1,23 @@
+<testsuite errors="0" failures="0" hostname="C02XKGLKJG5J" name="google.Google Search Within Website" skipped="0" tests="2" time="17.270898" timestamp="2019-02-18T14:02:05.415502"><testcase classname="google.Google Search Within Website" name="Searching within domain -- @1.1 " status="passed" time="13.150563"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Searching within domain -- @1.1 
+    Given I want to find Harry Kane within website www.bbc.co.uk ... passed in 0.000s
+    When I search on Google ... passed in 11.371s
+    Then the results are returned ... passed in 1.779s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="google.Google Search Within Website" name="Searching within domain -- @1.2 " status="passed" time="4.120334"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario Outline: Searching within domain -- @1.2 
+    Given I want to find beans within website www.costa.co.uk ... passed in 0.000s
+    When I search on Google ... passed in 2.295s
+    Then the results are returned ... passed in 1.825s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

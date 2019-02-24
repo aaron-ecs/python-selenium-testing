@@ -1,12 +1,12 @@
-Feature: Calculator
+Feature: Google Search Within Website
 
   Scenario Outline: Searching within domain -- @1.1 
-    Given I want to find Harry Kane within website www.bbc.co.uk ... passed in 2.130s
-    When I search on Google ... passed in 2.187s
-    Then the results are returned ... passed in 1.372s
+    Given I want to find Harry Kane within website www.bbc.co.uk ... passed in 0.000s
+    When I search on Google ... passed in 11.371s
+    Then the results are returned ... passed in 1.779s
 
   Scenario Outline: Searching within domain -- @1.2 
-    Given I want to find beans within website www.costa.co.uk ... passed in 3.271s
-    When I search on Google ... passed in 2.063s
-    Then the results are returned ... passed in 1.557s
+    Given I want to find beans within website www.costa.co.uk ... passed in 0.000s
+    When I search on Google ... passed in 2.295s
+    Then the results are returned ... passed in 1.825s
 
