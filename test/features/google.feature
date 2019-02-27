@@ -3,6 +3,7 @@ Feature: Google Search Within Website
  	I want to have the ability to prefix my searches with a Website
  	So I can search within a specific domain
 
+  @regression
   Scenario Outline: Searching within domain
         Given I want to find <term> within website <website>
         When I search on Google

@@ -5,6 +5,10 @@ from behave import given, when, then
 from test.features.steps.google_page import GooglePage
 
 
+def before_all(context):
+    context.driver.get("http://www.google.com")
+
+
 @given('I want to find {term} within website {website}')
 def build_search(context, term, website):
     """ Build the search query from the feature scenario """
@@ -14,10 +18,15 @@ def build_search(context, term, website):
 
 @when('I search on Google')
 def perform_search(context):
-    context.google_page = GooglePage(context.driver)
     """ Enter the search term and search """
-    context.driver.get("http://www.google.com")
+    context.execute_steps('''when I want to invoke another step''')
+    context.google_page = GooglePage(context.driver)
     context.google_page.search(context.search_term)
+
+
+@when('I want to invoke another step')
+def do_magic_things(context):
+    context.driver.get("http://www.google.co.uk")
 
 
 @then('the results are returned')

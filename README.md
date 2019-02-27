@@ -28,6 +28,19 @@ Please ensure you have the `pylint` plugin installed and running on your IDE.
 ## Jenkins
 If the Jenkins file is used it will build the docker image and then run `docker-compose up --exit-code-from tests` which kicks off the tests.
 
+## Behave Hints and Trips
+**Invoke Further Steps**
+You can invoke steps from within steps. For example you can call the below code with: `context.execute_steps('''when I want to invoke another step''')`
+```
+@when('I want to invoke another step')
+def do_magic_things(context):
+    context.driver.get("http://www.google.co.uk")
+```
+
+**Tagging**
+You can tag scenarios in the feature files and just run the scenarios tagged tests with this command: `behave --tags=regressions` or you can exclude them: `behave --tags=-slow`
+
+
 ## To-Do
 - Add more tests and abstract general selenium logic and waits
 - Add to TravisCI
