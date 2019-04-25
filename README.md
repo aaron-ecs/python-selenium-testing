@@ -12,10 +12,13 @@ Please have your Selenium Grid running. You may find the easyest way to do this 
 To save you from having to install Python and the dependencies you can run the tests by building the docker image
 run `docker build . -t aaronmwilliams/python-selenium-testing` in the project root then `docker-compose up` this will also spin up a Zalenium docker container.
 
+Or if you want to run the tests locally run the following command: `behave`
+
+
 ## Project
 **environment.py**: the driver is built and added to the context. Setup and teardown of the driver is done for each test.
 
-If you want to run the tests locally please amend the remote webdriver URL. Execute all tests by running the following command: `behave`
+Please note the default URL is `http://localhost:4444/wd/hub`. You can override this by running behave command with the following option: `-D ENV_URL="your-new-url.com"`. Please note you may also need to change this aswell in the docker files.
 
 ## Reporting
 The default Behave test result gets generated in `plain.output` file.

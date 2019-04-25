@@ -16,8 +16,8 @@ def build_search(context, term, website):
     context.website = website
 
 
-@when('I search on Google')
-def perform_search(context):
+@when('I search on {website}')
+def perform_search(context, website):
     """ Enter the search term and search """
     context.execute_steps('''when I want to invoke another step''')
     context.google_page = GooglePage(context.driver)
@@ -29,8 +29,8 @@ def do_magic_things(context):
     context.driver.get("http://www.google.co.uk")
 
 
-@then('the results are returned')
-def check_results(context):
+@then('{term} is included in the results')
+def check_results(context, term):
     """ Check the first 2 results are to the given web domain """
     for url in context.google_page.check_results():
         assert context.website in url

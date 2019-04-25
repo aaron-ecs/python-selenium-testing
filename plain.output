@@ -2,11 +2,11 @@ Feature: Google Search Within Website
 
   Scenario Outline: Searching within domain -- @1.1 
     Given I want to find Harry Kane within website www.bbc.co.uk ... passed in 0.000s
-    When I search on Google ... passed in 6.220s
-    Then the results are returned ... passed in 1.176s
+    When I search on www.bbc.co.uk ... passed in 1.883s
+    Then Harry Kane is included in the results ... passed in 0.692s
 
   Scenario Outline: Searching within domain -- @1.2 
     Given I want to find beans within website www.costa.co.uk ... passed in 0.000s
-    When I search on Google ... passed in 1.085s
-    Then the results are returned ... passed in 1.215s
+    When I search on www.costa.co.uk ... passed in 0.677s
+    Then beans is included in the results ... passed in 0.703s
 

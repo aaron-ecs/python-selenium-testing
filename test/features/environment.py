@@ -1,5 +1,6 @@
 from behave import fixture, use_fixture
 from selenium import webdriver
+import os
 
 BEHAVE_DEBUG_ON_ERROR = False
 
@@ -12,7 +13,7 @@ def setup_debug_on_error(userdata):
 @fixture
 def browser_firefox(context):
     context.driver = webdriver.Remote(
-        command_executor='http://localhost:4444/wd/hub',
+        command_executor=context.config.userdata.get("ENV_URL", "http://localhost:4444/wd/hub"),
         desired_capabilities={
             'browserName': 'firefox',
             'javascriptEnabled': True

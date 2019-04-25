@@ -6,10 +6,10 @@ Feature: Google Search Within Website
   @regression
   Scenario Outline: Searching within domain
         Given I want to find <term> within website <website>
-        When I search on Google
-        Then the results are returned
+        When I search on <website>
+        Then <term> is included in the results
 
         Examples:
-            | website          | term             |
-            | www.bbc.co.uk    | Harry Kane       |
-            | www.costa.co.uk  | beans            |
+            | website          | term           |
+            | www.bbc.co.uk    | Harry Kane     |
+            | www.costa.co.uk  | beans          |
