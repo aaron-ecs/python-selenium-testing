@@ -15,6 +15,6 @@ until $(curl --output /dev/null --silent --head --fail http://zalenium:4444/grid
     sleep 5
 done
 
-printf "\nZalenium docker container has been reached! Starting tests."
+printf "\nZalenium docker container has been reached! Starting tests!\n"
 
-behave
+behave -D ENV_URL="http://zalenium:4444/wd/hub"

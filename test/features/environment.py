@@ -1,6 +1,5 @@
 from behave import fixture, use_fixture
 from selenium import webdriver
-import os
 
 BEHAVE_DEBUG_ON_ERROR = False
 
